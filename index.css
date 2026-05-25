@@ -92,6 +92,7 @@ body{
   cursor:pointer;
   color:#111;
   z-index:11000;
+  user-select:none;
 }
 
 /* ================= HERO ================= */
