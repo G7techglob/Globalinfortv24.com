@@ -1,24 +1,41 @@
 const menuBtn = document.getElementById("menu-btn");
 const navbar = document.getElementById("navbar");
 
-/* OPEN / CLOSE MENU */
+/* OPEN SIDEBAR */
 menuBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   navbar.classList.toggle("active");
 });
 
-/* CLOSE ON LINK CLICK (RETURN TO DASHBOARD) */
+/* RETURN STEP BY STEP WHEN NAV LINK IS CLICKED */
 document.querySelectorAll(".navbar a").forEach(link => {
+
   link.addEventListener("click", () => {
+
+    /* CLOSE SIDEBAR */
     navbar.classList.remove("active");
+
   });
+
 });
 
-/* CLOSE WHEN CLICK OUTSIDE */
+/* RETURN TO DASHBOARD WHEN TAPPING SCREEN */
 document.addEventListener("click", (e) => {
-  if(!navbar.contains(e.target) && !menuBtn.contains(e.target)){
+
+  /* IF CLICK IS OUTSIDE SIDEBAR */
+  if (
+    !navbar.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ) {
+
+    /* CLOSE SIDEBAR */
     navbar.classList.remove("active");
+
   }
+
 });
 
-console.log(navbar);
+/* PREVENT SIDEBAR FROM CLOSING WHEN CLICKING INSIDE */
+navbar.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
