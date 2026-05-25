@@ -103,7 +103,7 @@ align-items:center;
 }
 
 .news-item img{
-width:220px;
+width:100px;
 height:140px;
 object-fit:cover;
 }
