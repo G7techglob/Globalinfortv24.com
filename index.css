@@ -18,8 +18,8 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 700px;
+  width: 100%;
+  height: 70px;
   background: #fff;
   display: flex;
   justify-content: space-between;
@@ -38,7 +38,7 @@ html, body {
 
 .logo {
   width: 40px;
-  height: 20px;
+  height: 40px;
   background: #0057b8;
   color: #fff;
   display: flex;
@@ -60,12 +60,13 @@ html, body {
   font-weight: 500;
 }
 
-/* ================= 3-LINE BUTTON ================= */
+/* ================= 3-LINE MENU BUTTON ================= */
 .menu-btn {
   display: none;
   font-size: 26px;
   cursor: pointer;
   z-index: 11000;
+  color: #111;
 }
 
 /* ================= HERO ================= */
@@ -107,13 +108,6 @@ html, body {
   object-fit: cover;
 }
 
-.menu-btn {
-  display: block !important;
-  background: red;
-  width: 50px;
-  height: 50px;
-}
-
 /* ================= MEDIA ================= */
 .media-block {
   margin-top: 20px;
@@ -122,6 +116,7 @@ html, body {
 .media-block img,
 .media-block video {
   width: 100%;
+  max-width: 100%;
 }
 
 /* ================= FORM ================= */
@@ -135,12 +130,13 @@ form {
 input, textarea {
   padding: 12px;
   border: 1px solid #ccc;
+  outline: none;
 }
 
 /* ================= BUTTON ================= */
 button {
   background: #0057b8;
-  color: white;
+  color: #fff;
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -149,7 +145,7 @@ button {
 /* ================= FOOTER ================= */
 .footer {
   background: #0057b8;
-  color: white;
+  color: #fff;
   padding: 40px 5%;
 }
 
@@ -160,7 +156,7 @@ button {
 }
 
 .social-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -174,7 +170,7 @@ button {
 /* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 900px) {
 
-  /* SHOW 3-LINE BUTTON */
+  /* SHOW MENU BUTTON */
   .menu-btn {
     display: block;
   }
