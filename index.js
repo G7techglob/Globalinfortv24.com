@@ -20,3 +20,5 @@ document.addEventListener("click", (e) => {
     navbar.classList.remove("active");
   }
 });
+
+console.log(navbar);
