@@ -143,22 +143,28 @@ input,textarea{
 padding:12px;
 border:1px solid #ccc;
 }
-
 .navbar {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  height: 100vh;
-  width: 240px;
-  background: white;
   display: flex;
-  flex-direction: column;
-  padding: 80px 20px;
-  transition: 0.3s;
+  gap: 25px;
 }
 
-.navbar.active {
-  right: 0;
+/* MOBILE ONLY hides it */
+@media (max-width: 900px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    height: 100vh;
+    width: 240px;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 20px;
+    transition: 0.3s;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
 }
 
 /* BUTTON */
