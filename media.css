@@ -39,10 +39,14 @@ img{
   justify-content:space-between;
 }
 
+/* LOGO AREA */
+
 .logo-area{
   display:flex;
   align-items:center;
   gap:12px;
+  flex:1;
+  min-width:0;
 }
 
 .logo{
@@ -56,54 +60,87 @@ img{
   justify-content:center;
   font-size:22px;
   font-weight:800;
+  flex-shrink:0;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
 }
 
 .logo-text h1{
   font-size:22px;
   color:#003366;
+  line-height:1.2;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .logo-text p{
   font-size:13px;
   color:#666;
   margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
+
+/* MENU BUTTON */
 
 .menu-btn{
   font-size:30px;
   cursor:pointer;
   color:#003366;
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.menu-btn:hover{
+  background:#f0f4ff;
 }
 
 /* SIDEBAR */
 
 .sidebar{
   position:fixed;
-  top:0;
-  left:-280px;
+  top:85px;
+  right:-280px;
+  left:auto;
   width:280px;
-  height:100%;
+  height:calc(100% - 85px);
   background:#ffffff;
   z-index:2000;
-  box-shadow:4px 0 15px rgba(0,0,0,0.15);
-  transition:0.4s;
-  padding-top:30px;
+  box-shadow:-4px 0 15px rgba(0,0,0,0.15);
+  transition:0.4s ease;
+  padding-top:20px;
+  border-top-left-radius:18px;
+  border-bottom-left-radius:18px;
+  overflow-y:auto;
 }
 
 .sidebar.active{
-  left:0;
+  right:0;
 }
 
 .sidebar-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 25px 25px;
+  padding:0 25px 20px;
   border-bottom:1px solid #ddd;
 }
 
 .sidebar-header h2{
   color:#003366;
+  font-size:22px;
 }
 
 .close-btn{
@@ -118,6 +155,7 @@ img{
   border-bottom:1px solid #eee;
   transition:0.3s;
   font-weight:500;
+  color:#222;
 }
 
 .sidebar a:hover{
@@ -362,6 +400,10 @@ footer{
 
   .section-title h2{
     font-size:32px;
+  }
+
+  .sidebar{
+    width:250px;
   }
 
 }
