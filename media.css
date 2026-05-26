@@ -58,7 +58,7 @@ img{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:11px; /* Reduced to fit logo size */
   font-weight:800;
   flex-shrink:0;
 }
@@ -71,7 +71,7 @@ img{
 }
 
 .logo-text h1{
-  font-size:22px;
+  font-size:18px;
   color:#003366;
   line-height:1.2;
   white-space:nowrap;
@@ -80,9 +80,9 @@ img{
 }
 
 .logo-text p{
-  font-size:13px;
+  font-size:11px;
   color:#666;
-  margin-top:3px;
+  margin-top:2px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
