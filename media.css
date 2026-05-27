@@ -45,33 +45,37 @@ img{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
 }
 
-
-/* LOGO AREA */
+/* =========================
+   LOGO AREA
+========================= */
 
 .logo-area{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:12px;
 }
 
 .logo{
-  width:60px;
-  height:60px;
+  width:45px;
+  height:45px;
   border-radius:50%;
   object-fit:cover;
+  flex-shrink:0;
 }
 
 .logo-text h1{
   color:#0047ab;
-  font-size:24px;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.2;
 }
 
 .logo-text p{
   color:#666;
-  font-size:13px;
+  font-size:12px;
+  margin-top:2px;
 }
 
 .menu-btn{
@@ -80,6 +84,11 @@ img{
   font-size:28px;
   cursor:pointer;
   color:#0047ab;
+  transition:0.3s ease;
+}
+
+.menu-btn:hover{
+  transform:scale(1.1);
 }
 
 /* =========================
@@ -415,21 +424,28 @@ footer{
   }
 
   .logo{
-    width:42px;
-    height:42px;
-    font-size:16px;
+    width:36px;
+    height:36px;
   }
 
   .logo-text h1{
-    font-size:17px;
+    font-size:16px;
   }
 
   .logo-text p{
-    font-size:11px;
+    font-size:10px;
+  }
+
+  .menu-btn{
+    font-size:24px;
+  }
+
+  .hero{
+    min-height:320px;
   }
 
   .hero-content h1{
-    font-size:34px;
+    font-size:32px;
   }
 
   .hero-content p{
@@ -450,6 +466,10 @@ footer{
 
   .video-container{
     grid-template-columns:1fr;
+  }
+
+  .video-container iframe{
+    height:220px;
   }
 
   .back-btn{
