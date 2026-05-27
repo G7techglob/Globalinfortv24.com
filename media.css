@@ -62,8 +62,8 @@ img{
 /* SMALLER LOGO */
 
 .logo{
-  width:15px;
-  height:15px;
+  width:10px;
+  height:10px;
   border-radius:50%;
   background:#0057b8;
   color:#ffffff;
@@ -71,7 +71,7 @@ img{
   align-items:center;
   justify-content:center;
   font-size:13px;
-  font-weight:100;
+  font-weight:80;
   flex-shrink:0;
   overflow:hidden;
 }
