@@ -45,11 +45,9 @@ img{
   display:flex;
   align-items:center;
   justify-content:space-between;
+
 }
 
-/* =========================
-   LOGO AREA
-========================= */
 
 /* LOGO AREA */
 
@@ -64,8 +62,8 @@ img{
 /* SMALLER LOGO */
 
 .logo{
-  width:34px;
-  height:34px;
+  width:22px;
+  height:22px;
   border-radius:50%;
   background:#0057b8;
   color:#ffffff;
