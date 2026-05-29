@@ -1,41 +1,82 @@
-const menuBtn = document.getElementById("menu-btn");
-const navbar = document.getElementById("navbar");
+// ===============================
+// MOBILE MENU
+// ===============================
+const menuBtn = document.getElementById('menu-btn');
+const navbar = document.getElementById('navbar');
 
-/* OPEN SIDEBAR */
-menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  navbar.classList.toggle("active");
+menuBtn.addEventListener('click', () => {
+  navbar.classList.toggle('active');
 });
 
-/* RETURN STEP BY STEP WHEN NAV LINK IS CLICKED */
-document.querySelectorAll(".navbar a").forEach(link => {
 
-  link.addEventListener("click", () => {
+// ===============================
+// LIVE RSS NEWS SYSTEM
+// ===============================
 
-    /* CLOSE SIDEBAR */
-    navbar.classList.remove("active");
+const rssFeeds = [
 
-  });
+  // CNN
+  "https://rss.cnn.com/rss/edition_world.rss",
 
-});
+  // BBC
+  "https://feeds.bbci.co.uk/news/world/rss.xml",
 
-/* RETURN TO DASHBOARD WHEN TAPPING SCREEN */
-document.addEventListener("click", (e) => {
+  // Al Jazeera
+  "https://www.aljazeera.com/xml/rss/all.xml",
 
-  /* IF CLICK IS OUTSIDE SIDEBAR */
-  if (
-    !navbar.contains(e.target) &&
-    !menuBtn.contains(e.target)
-  ) {
+  // New York Times
+  "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
 
-    /* CLOSE SIDEBAR */
-    navbar.classList.remove("active");
+  // Reuters
+  "https://feeds.reuters.com/Reuters/worldNews"
 
-  }
+];
 
-});
+const newsContainer = document.getElementById("rss-news-container");
 
-/* PREVENT SIDEBAR FROM CLOSING WHEN CLICKING INSIDE */
-navbar.addEventListener("click", (e) => {
-  e.stopPropagation();
+rssFeeds.forEach(feed => {
+
+  const api =
+    `https://api.rss2json.com/v1/api.json?rss_url=${feed}`;
+
+  fetch(api)
+    .then(response => response.json())
+    .then(data => {
+
+      data.items.slice(0, 3).forEach(item => {
+
+        const card = document.createElement("div");
+        card.classList.add("rss-card");
+
+        card.innerHTML = `
+
+          <img src="${
+            item.thumbnail ||
+            'https://images.unsplash.com/photo-1504711434969-e33886168f5c'
+          }" alt="news">
+
+          <div class="rss-content">
+
+            <h3>${item.title}</h3>
+
+            <p>
+              ${item.description.substring(0,120)}...
+            </p>
+
+            <a href="${item.link}" target="_blank">
+              Read Full News
+            </a>
+
+          </div>
+        `;
+
+        newsContainer.appendChild(card);
+
+      });
+
+    })
+    .catch(error => {
+      console.log("RSS Error:", error);
+    });
+
 });
