@@ -508,3 +508,10 @@ footer{
     text-align:center;
   }
 }
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 10px;
+}
