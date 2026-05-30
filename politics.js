@@ -1,17 +1,10 @@
-const menuBtn = document.getElementById('menuBtn');
-const navMenu = document.getElementById('navMenu');
+document.addEventListener("DOMContentLoaded", () => {
 
-menuBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-});
+    const menuBtn = document.getElementById("menu-btn");
+    const navbar = document.getElementById("navbar");
 
-// Sticky header shadow on scroll
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
+    menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
 
-  if(window.scrollY > 20){
-    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-  } else {
-    header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.06)';
-  }
 });
